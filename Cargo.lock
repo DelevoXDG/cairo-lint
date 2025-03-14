@@ -685,6 +685,7 @@ dependencies = [
  "log",
  "num-bigint",
  "pretty_assertions",
+ "serde",
  "test-case",
 ]
 
@@ -1732,7 +1733,8 @@ dependencies = [
  "scarb-metadata",
  "scarb-ui",
  "semver",
- "smol_str",
+ "serde_json",
+ "toml",
 ]
 
 [[package]]
@@ -2407,8 +2409,11 @@ name = "xtask"
 version = "1.0.0"
 dependencies = [
  "anyhow",
+ "cairo-lint-core",
  "cairo-toolchain-xtasks",
  "clap",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
