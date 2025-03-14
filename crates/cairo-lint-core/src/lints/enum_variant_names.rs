@@ -75,6 +75,8 @@ pub fn check_enum_variant_names(
             stable_ptr: enum_id.untyped_stable_ptr(db.upcast()),
             message: EnumVariantNames.diagnostic_message().to_string(),
             severity: Severity::Warning,
+            end_ptr: None,
+            note: None,
         });
     }
 }
