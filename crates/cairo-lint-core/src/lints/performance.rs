@@ -100,6 +100,8 @@ fn check_expression(
                     stable_ptr: func_call.stable_ptr.into(),
                     message: InefficientWhileComparison.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+                    end_ptr: None,
+                    note: None,
                 });
             }
         }

@@ -104,6 +104,8 @@ fn check_single_bool_comparison(
                     stable_ptr: function_call_expr.stable_ptr.untyped(),
                     message: BoolComparison.diagnostic_message().to_string(),
                     severity: Severity::Warning,
+                    end_ptr: None,
+                    note: None,
                 });
             }
         }

@@ -80,6 +80,8 @@ pub fn check_manual_expect(
                     stable_ptr: match_expr.stable_ptr.untyped(),
                     message: ManualExpect.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+                    end_ptr: None,
+                    note: None,
                 });
             }
 
@@ -88,6 +90,8 @@ pub fn check_manual_expect(
                     stable_ptr: match_expr.stable_ptr.untyped(),
                     message: ManualExpect.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+                    end_ptr: None,
+                    note: None,
                 });
             }
         }
@@ -97,6 +101,8 @@ pub fn check_manual_expect(
                     stable_ptr: if_expr.stable_ptr.untyped(),
                     message: ManualExpect.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+                    end_ptr: None,
+                    note: None,
                 });
             }
 
@@ -105,6 +111,8 @@ pub fn check_manual_expect(
                     stable_ptr: if_expr.stable_ptr.untyped(),
                     message: ManualExpect.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+                    end_ptr: None,
+                    note: None,
                 });
             }
         }

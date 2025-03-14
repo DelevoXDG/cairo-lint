@@ -82,6 +82,8 @@ fn check_single_redundant_operation(
             stable_ptr: expr_func.stable_ptr.untyped(),
             message: RedundantOperation.diagnostic_message().to_string(),
             severity: Severity::Warning,
+            end_ptr: None,
+            note: None,
         });
     }
 }
