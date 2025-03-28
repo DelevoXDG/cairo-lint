@@ -1,6 +1,8 @@
 # eq_diff_op
 
-[Source Code](https://github.com/software-mansion/cairo-lint/tree/main/crates/cairo-lint-core/src/lints/eq_op.rs#L146)
+Default: **Enabled**
+
+[Source Code](https://github.com/software-mansion/cairo-lint/tree/main/src/lints/eq_op.rs#L146)
 
 ## What it does
 

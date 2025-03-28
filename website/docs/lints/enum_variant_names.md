@@ -1,6 +1,8 @@
 # enum_variant_names
 
-[Source Code](https://github.com/software-mansion/cairo-lint/tree/main/crates/cairo-lint-core/src/lints/enum_variant_names.rs#L36)
+Default: **Disabled**
+
+[Source Code](https://github.com/software-mansion/cairo-lint/tree/main/src/lints/enum_variant_names.rs#L36)
 
 ## What it does
 

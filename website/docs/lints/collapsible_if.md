@@ -1,6 +1,8 @@
 # collapsible_if
 
-[Source Code](https://github.com/software-mansion/cairo-lint/tree/main/crates/cairo-lint-core/src/lints/ifs/collapsible_if.rs#L51)
+Default: **Enabled**
+
+[Source Code](https://github.com/software-mansion/cairo-lint/tree/main/src/lints/ifs/collapsible_if.rs#L51)
 
 ## What it does
 

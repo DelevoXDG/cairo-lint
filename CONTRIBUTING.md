@@ -17,9 +17,9 @@ include that information in the pull request description.
 
 ## Adding new lint rule
 
-In order to add a new rule, you must extend a [context](crates/cairo-lint-core/src/context.rs) with a new lint or whole lint group.
+In order to add a new rule, you must extend a [context](src/context.rs) with a new lint or whole lint group.
 
-Each individual lint rule should be documented. When implementing [Lint trait](crates/cairo-lint-core/src/context.rs#L118) for the Lint rule, remember to include a documentation for it which should look like this:
+Each individual lint rule should be documented. When implementing [Lint trait](src/context.rs#L118) for the Lint rule, remember to include a documentation for it which should look like this:
 
 ```rust
 /// ## What it does
@@ -46,12 +46,21 @@ After implementing a new lint or after modifying old one's documentation, it is 
 
 ### Running tests
 
-To run the tests you'll need to provide the path to the cairo corelib (at some point this should be automated but we're
-not there yet).
+To run the tests, just use:
+
+```sh
+cargo test
+```
+
+Remember to have `scarb` in your PATH, as it's used to resolve corelib used for testing. The Scarb version that should be used if testing is specified in [.tool-versions](.tool-versions) file.
+
+If you don't have an access to scarb binary, or you want to use specific version of the corelib during testing, just run:
 
 ```sh
 CORELIB_PATH="/path/to/corelib/src" cargo test
 ```
+
+and use any corelib version you want.
 
 ### Reviewing snapshot changes
 
@@ -62,12 +71,12 @@ cargo insta review
 ### Manual instructions
 
 Each lint should have its own tests and should be extensive. To create a new test for a lint you need to create a new file/module
-in the [test_files folder](./crates/cairo-lint-core/tests) and should be named as your lint. The file should
+in the [test_files folder](tests) and should be named as your lint. The file should
 
 As for tests, we are using [insta](https://insta.rs/) snapshot library. 
 There are 2 testing macros:
-- [test_lint_diagnostics](crates/cairo-lint-core/tests/helpers/mod.rs)
-- [test_lint_fixer](crates/cairo-lint-core/tests/helpers/mod.rs)
+- [test_lint_diagnostics](tests/helpers/mod.rs)
+- [test_lint_fixer](tests/helpers/mod.rs)
 
 Tests should use only the inline snapshots.
 

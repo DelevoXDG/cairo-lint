@@ -1,6 +1,8 @@
 # loop_for_while
 
-[Source Code](https://github.com/software-mansion/cairo-lint/tree/main/crates/cairo-lint-core/src/lints/loops/loop_for_while.rs#L48)
+Default: **Enabled**
+
+[Source Code](https://github.com/software-mansion/cairo-lint/tree/main/src/lints/loops/loop_for_while.rs#L48)
 
 ## What it does
 
