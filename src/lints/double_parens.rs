@@ -84,6 +84,7 @@ fn check_single_double_parens(
             message: DoubleParens.diagnostic_message().to_string(),
             severity: Severity::Warning,
             end_ptr: None,
+                span: None,
             note: None,
         });
     }

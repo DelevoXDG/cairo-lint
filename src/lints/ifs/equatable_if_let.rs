@@ -90,6 +90,7 @@ fn check_single_equatable_if_let(
                 message: EquatableIfLet.diagnostic_message().to_string(),
                 severity: Severity::Warning,
                 end_ptr: None,
+                span: None,
                 note: None,
             });
         }

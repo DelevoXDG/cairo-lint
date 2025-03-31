@@ -83,6 +83,7 @@ pub fn check_manual_unwrap_or_default(
                     message: ManualUnwrapOrDefault.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }
@@ -94,6 +95,7 @@ pub fn check_manual_unwrap_or_default(
                     message: ManualUnwrapOrDefault.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }

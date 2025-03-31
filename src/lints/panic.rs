@@ -97,6 +97,7 @@ fn check_single_panic_usage(
             message: PanicInCode.diagnostic_message().to_owned(),
             severity: Severity::Warning,
             end_ptr: None,
+                span: None,
             note: None,
         });
     } else {
@@ -112,6 +113,7 @@ fn check_single_panic_usage(
                     message: PanicInCode.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }

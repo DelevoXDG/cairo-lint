@@ -80,6 +80,7 @@ pub fn check_enum_variant_names(
             message: EnumVariantNames.diagnostic_message().to_string(),
             severity: Severity::Warning,
             end_ptr: None,
+                span: None,
             note: None,
         });
     }

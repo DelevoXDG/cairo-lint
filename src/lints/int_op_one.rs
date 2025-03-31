@@ -241,6 +241,7 @@ fn check_single_int_op_one(
             message: IntegerGreaterEqualPlusOne.diagnostic_message().to_string(),
             severity: Severity::Warning,
             end_ptr: None,
+                span: None,
             note: None,
         });
     }
@@ -255,6 +256,7 @@ fn check_single_int_op_one(
             message: IntegerGreaterEqualMinusOne.diagnostic_message().to_string(),
             severity: Severity::Warning,
             end_ptr: None,
+                span: None,
             note: None,
         });
     }
@@ -269,6 +271,7 @@ fn check_single_int_op_one(
             message: IntegerLessEqualPlusOne.diagnostic_message().to_string(),
             severity: Severity::Warning,
             end_ptr: None,
+                span: None,
             note: None,
         });
     }
@@ -283,6 +286,7 @@ fn check_single_int_op_one(
             message: IntegerLessEqualMinusOne.diagnostic_message().to_string(),
             severity: Severity::Warning,
             end_ptr: None,
+                span: None,
             note: None,
         });
     }

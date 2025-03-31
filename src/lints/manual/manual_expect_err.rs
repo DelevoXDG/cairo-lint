@@ -89,6 +89,7 @@ pub fn check_manual_expect_err(
                     message: ManualExpectErr.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }
@@ -100,6 +101,7 @@ pub fn check_manual_expect_err(
                     message: ManualExpectErr.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }

@@ -220,6 +220,7 @@ pub fn check_manual_is(
                     message: ManualIsSome.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }
@@ -229,6 +230,7 @@ pub fn check_manual_is(
                     message: ManualIsNone.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }
@@ -238,6 +240,7 @@ pub fn check_manual_is(
                     message: ManualIsOk.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }
@@ -247,6 +250,7 @@ pub fn check_manual_is(
                     message: ManualIsErr.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }
@@ -258,6 +262,7 @@ pub fn check_manual_is(
                     message: ManualIsSome.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }
@@ -267,6 +272,7 @@ pub fn check_manual_is(
                     message: ManualIsNone.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }
@@ -276,6 +282,7 @@ pub fn check_manual_is(
                     message: ManualIsOk.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }
@@ -285,6 +292,7 @@ pub fn check_manual_is(
                     message: ManualIsErr.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }

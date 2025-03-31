@@ -56,6 +56,7 @@ pub fn check_duplicate_underscore_args(
                     message: DuplicateUnderscoreArgs.diagnostic_message().to_string(),
                     severity: Severity::Warning,
                     end_ptr: None,
+                span: None,
                     note: None,
                 });
             }

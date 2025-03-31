@@ -86,6 +86,7 @@ fn check_single_bitwise_for_parity(
                 severity: Severity::Warning,
                 end_ptr: None,
                 note: None,
+                span: None,
             });
         }
     }

@@ -119,6 +119,7 @@ fn check_single_loop_for_while(
                 message: LoopForWhile.diagnostic_message().to_string(),
                 severity: Severity::Warning,
                 end_ptr: None,
+                span: None,
                 note: None,
             });
         }
@@ -137,6 +138,7 @@ fn check_single_loop_for_while(
                 message: LoopForWhile.diagnostic_message().to_string(),
                 severity: Severity::Warning,
                 end_ptr: None,
+                span: None,
                 note: None,
             });
         }

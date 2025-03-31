@@ -127,6 +127,7 @@ fn check_single_collapsible_if_else(
             message: CollapsibleIfElse.diagnostic_message().to_string(),
             severity: Severity::Warning,
             end_ptr: None,
+                span: None,
             note: None,
         });
     }

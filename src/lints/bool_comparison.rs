@@ -106,6 +106,7 @@ fn check_single_bool_comparison(
                     severity: Severity::Warning,
                     end_ptr: None,
                     note: None,
+                    span: None,
                 });
             }
         }
