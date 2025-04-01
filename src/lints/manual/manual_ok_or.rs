@@ -86,9 +86,8 @@ pub fn check_manual_ok_or(
                     stable_ptr: match_expr.stable_ptr.untyped(),
                     message: ManualOkOr.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
-                    end_ptr: None,
-                span: None,
-                    note: None,
+
+                    span: None,
                 });
             }
         }
@@ -98,31 +97,25 @@ pub fn check_manual_ok_or(
                     stable_ptr: if_expr.stable_ptr.untyped(),
                     message: ManualOkOr.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
-                    end_ptr: None,
-                span: None,
-                    note: None,
+
+                    span: None,
                 });
             }
         }
     }
 }
-
 /// Rewrites a manual implementation of ok_or
 pub fn fix_manual_ok_or(db: &dyn SyntaxGroup, node: SyntaxNode) -> Option<(SyntaxNode, String)> {
     let fix = match node.kind(db) {
         SyntaxKind::ExprMatch => {
             let expr_match = ExprMatch::from_syntax_node(db, node.clone());
-
             let (option_var_name, none_arm_err) =
                 expr_match_get_var_name_and_err(expr_match, db, 1);
-
             format!("{}.ok_or({none_arm_err})", option_var_name.trim_end())
         }
         SyntaxKind::ExprIf => {
             let expr_if = ExprIf::from_syntax_node(db, node.clone());
-
             let (option_var_name, err) = expr_if_get_var_name_and_err(expr_if, db);
-
             format!("{}.ok_or({})", option_var_name.trim_end(), err)
         }
         _ => panic!("SyntaxKind should be either ExprIf or ExprMatch"),

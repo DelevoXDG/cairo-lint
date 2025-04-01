@@ -126,13 +126,10 @@ fn check_single_collapsible_if_else(
             stable_ptr: if_expr.stable_ptr.untyped(),
             message: CollapsibleIfElse.diagnostic_message().to_string(),
             severity: Severity::Warning,
-            end_ptr: None,
-                span: None,
-            note: None,
+            span: None,
         });
     }
 }
-
 fn is_only_statement_if(block_expr: &ExprBlock, arenas: &Arenas) -> bool {
     if block_expr.statements.len() == 1 && block_expr.tail.is_none() {
         if_chain! {

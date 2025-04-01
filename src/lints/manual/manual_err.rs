@@ -75,9 +75,8 @@ pub fn check_manual_err(
                     stable_ptr: match_expr.stable_ptr.untyped(),
                     message: ManualErr.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
-                    end_ptr: None,
-                span: None,
-                    note: None,
+
+                    span: None,
                 });
             }
         }
@@ -87,15 +86,13 @@ pub fn check_manual_err(
                     stable_ptr: if_expr.stable_ptr.untyped(),
                     message: ManualErr.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
-                    end_ptr: None,
-                span: None,
-                    note: None,
+
+                    span: None,
                 });
             }
         }
     }
 }
-
 /// Rewrites a manual implementation of err
 pub fn fix_manual_err(db: &dyn SyntaxGroup, node: SyntaxNode) -> Option<(SyntaxNode, String)> {
     Some((node.clone(), fix_manual("err", db, node)))

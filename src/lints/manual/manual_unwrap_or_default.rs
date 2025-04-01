@@ -82,9 +82,8 @@ pub fn check_manual_unwrap_or_default(
                     stable_ptr: match_expr.stable_ptr.untyped(),
                     message: ManualUnwrapOrDefault.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
-                    end_ptr: None,
-                span: None,
-                    note: None,
+
+                    span: None,
                 });
             }
         }
@@ -94,15 +93,13 @@ pub fn check_manual_unwrap_or_default(
                     stable_ptr: if_expr.stable_ptr.untyped(),
                     message: ManualUnwrapOrDefault.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
-                    end_ptr: None,
-                span: None,
-                    note: None,
+
+                    span: None,
                 });
             }
         }
     }
 }
-
 /// Rewrites manual unwrap or default to use unwrap_or_default
 pub fn fix_manual_unwrap_or_default(
     db: &dyn SyntaxGroup,
@@ -110,16 +107,13 @@ pub fn fix_manual_unwrap_or_default(
 ) -> Option<(SyntaxNode, String)> {
     // Check if the node is a general expression
     let expr = Expr::from_syntax_node(db, node.clone());
-
     let matched_expr = match expr {
         // Handle the case where the expression is a match expression
         Expr::Match(expr_match) => expr_match.expr(db).as_syntax_node(),
-
         // Handle the case where the expression is an if-let expression
         Expr::If(expr_if) => {
             // Extract the condition from the if-let expression
             let condition = expr_if.condition(db);
-
             match condition {
                 Condition::Let(condition_let) => {
                     // Extract and return the syntax node for the matched expression
@@ -131,13 +125,11 @@ pub fn fix_manual_unwrap_or_default(
         // Handle unsupported expressions
         _ => panic!("The expression cannot be simplified to `.unwrap_or_default()`."),
     };
-
     let indent = node
         .get_text(db)
         .chars()
         .take_while(|c| c.is_whitespace())
         .collect::<String>();
-
     let mut loop_span = node.span(db);
     loop_span.end = node.span_start_without_trivia(db);
     let trivia = node
@@ -150,7 +142,6 @@ pub fn fix_manual_unwrap_or_default(
     } else {
         format!("{indent}{trivia}\n")
     };
-
     Some((
         node,
         format!(
