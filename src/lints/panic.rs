@@ -97,7 +97,7 @@ fn check_single_panic_usage(
             message: PanicInCode.diagnostic_message().to_owned(),
             severity: Severity::Warning,
 
-            span: None,
+            relative_span: None,
         });
     } else {
         // If the originating location is a different file get the syntax node that generated the
@@ -112,7 +112,7 @@ fn check_single_panic_usage(
                     message: PanicInCode.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
 
-                span: None,
+                relative_span: None,
 
                 });
             }

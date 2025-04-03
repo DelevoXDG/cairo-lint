@@ -83,7 +83,7 @@ fn check_single_redundant_operation(
             message: RedundantOperation.diagnostic_message().to_string(),
             severity: Severity::Warning,
 
-            span: None,
+            relative_span: None,
         });
     }
 }

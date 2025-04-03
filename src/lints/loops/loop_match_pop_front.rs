@@ -117,7 +117,7 @@ fn check_single_loop_match_pop_front(
                 stable_ptr: loop_expr.stable_ptr.into(),
                 message: LoopMatchPopFront.diagnostic_message().to_owned(),
                 severity: Severity::Warning,
-                span: None,
+                relative_span: None,
             });
             return;
         }
@@ -142,7 +142,7 @@ fn check_single_loop_match_pop_front(
                     stable_ptr: loop_expr.stable_ptr.into(),
                     message: LoopMatchPopFront.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
-                span: None,
+                relative_span: None,
                 });
             }
         }

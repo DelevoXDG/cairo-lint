@@ -81,7 +81,7 @@ pub fn check_manual_expect(
                     message: ManualExpect.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
 
-                    span: None,
+                    relative_span: None,
                 });
             }
             if check_manual(db, match_expr, arenas, ManualLint::ManualResExpect) {
@@ -90,7 +90,7 @@ pub fn check_manual_expect(
                     message: ManualExpect.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
 
-                    span: None,
+                    relative_span: None,
                 });
             }
         }
@@ -101,7 +101,7 @@ pub fn check_manual_expect(
                     message: ManualExpect.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
 
-                    span: None,
+                    relative_span: None,
                 });
             }
             if check_manual_if(db, if_expr, arenas, ManualLint::ManualResExpect) {
@@ -110,7 +110,7 @@ pub fn check_manual_expect(
                     message: ManualExpect.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
 
-                    span: None,
+                    relative_span: None,
                 });
             }
         }
