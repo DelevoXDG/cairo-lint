@@ -219,6 +219,8 @@ pub fn check_manual_is(
                     stable_ptr: match_expr.stable_ptr.untyped(),
                     message: ManualIsSome.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+
+                    relative_span: None,
                 });
             }
             if check_manual(db, match_expr, arenas, ManualLint::ManualIsNone) {
@@ -226,6 +228,8 @@ pub fn check_manual_is(
                     stable_ptr: match_expr.stable_ptr.untyped(),
                     message: ManualIsNone.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+
+                    relative_span: None,
                 });
             }
             if check_manual(db, match_expr, arenas, ManualLint::ManualIsOk) {
@@ -233,6 +237,8 @@ pub fn check_manual_is(
                     stable_ptr: match_expr.stable_ptr.untyped(),
                     message: ManualIsOk.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+
+                    relative_span: None,
                 });
             }
             if check_manual(db, match_expr, arenas, ManualLint::ManualIsErr) {
@@ -240,6 +246,8 @@ pub fn check_manual_is(
                     stable_ptr: match_expr.stable_ptr.untyped(),
                     message: ManualIsErr.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+
+                    relative_span: None,
                 });
             }
         }
@@ -249,6 +257,8 @@ pub fn check_manual_is(
                     stable_ptr: if_expr.stable_ptr.untyped(),
                     message: ManualIsSome.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+
+                    relative_span: None,
                 });
             }
             if check_manual_if(db, if_expr, arenas, ManualLint::ManualIsNone) {
@@ -256,6 +266,8 @@ pub fn check_manual_is(
                     stable_ptr: if_expr.stable_ptr.untyped(),
                     message: ManualIsNone.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+
+                    relative_span: None,
                 });
             }
             if check_manual_if(db, if_expr, arenas, ManualLint::ManualIsOk) {
@@ -263,6 +275,8 @@ pub fn check_manual_is(
                     stable_ptr: if_expr.stable_ptr.untyped(),
                     message: ManualIsOk.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+
+                    relative_span: None,
                 });
             }
             if check_manual_if(db, if_expr, arenas, ManualLint::ManualIsErr) {
@@ -270,27 +284,25 @@ pub fn check_manual_is(
                     stable_ptr: if_expr.stable_ptr.untyped(),
                     message: ManualIsErr.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+
+                    relative_span: None,
                 });
             }
         }
     }
 }
-
 /// Rewrites a manual implementation of is_some
 pub fn fix_manual_is_some(db: &dyn SyntaxGroup, node: SyntaxNode) -> Option<(SyntaxNode, String)> {
     Some((node.clone(), fix_manual("is_some", db, node)))
 }
-
 // Rewrites a manual implementation of is_none
 pub fn fix_manual_is_none(db: &dyn SyntaxGroup, node: SyntaxNode) -> Option<(SyntaxNode, String)> {
     Some((node.clone(), fix_manual("is_none", db, node)))
 }
-
 /// Rewrites a manual implementation of is_ok
 pub fn fix_manual_is_ok(db: &dyn SyntaxGroup, node: SyntaxNode) -> Option<(SyntaxNode, String)> {
     Some((node.clone(), fix_manual("is_ok", db, node)))
 }
-
 /// Rewrites a manual implementation of is_err
 pub fn fix_manual_is_err(db: &dyn SyntaxGroup, node: SyntaxNode) -> Option<(SyntaxNode, String)> {
     Some((node.clone(), fix_manual("is_err", db, node)))

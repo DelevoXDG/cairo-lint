@@ -88,6 +88,8 @@ pub fn check_manual_expect_err(
                     stable_ptr: match_expr.stable_ptr.untyped(),
                     message: ManualExpectErr.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+
+                    relative_span: None,
                 });
             }
         }
@@ -97,12 +99,13 @@ pub fn check_manual_expect_err(
                     stable_ptr: if_expr.stable_ptr.untyped(),
                     message: ManualExpectErr.diagnostic_message().to_owned(),
                     severity: Severity::Warning,
+
+                    relative_span: None,
                 });
             }
         }
     }
 }
-
 /// Rewrites a manual implementation of expect err
 pub fn fix_manual_expect_err(
     db: &dyn SyntaxGroup,
@@ -111,17 +114,13 @@ pub fn fix_manual_expect_err(
     let fix = match node.kind(db) {
         SyntaxKind::ExprMatch => {
             let expr_match = ExprMatch::from_syntax_node(db, node.clone());
-
             let (option_var_name, none_arm_err) =
                 expr_match_get_var_name_and_err(expr_match, db, 0);
-
             format!("{}.expect_err({none_arm_err})", option_var_name.trim_end())
         }
         SyntaxKind::ExprIf => {
             let expr_if = ExprIf::from_syntax_node(db, node.clone());
-
             let (option_var_name, err) = expr_if_get_var_name_and_err(expr_if, db);
-
             format!("{}.expect_err({err})", option_var_name.trim_end())
         }
         _ => panic!("SyntaxKind should be either ExprIf or ExprMatch"),
